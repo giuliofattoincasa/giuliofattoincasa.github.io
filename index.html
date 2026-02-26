@@ -38,16 +38,18 @@
             font-size: 18px;
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-            z-index: 1000; /* Asegura que esté por encima de todo */
-            
-            /* Animación de entrada */
-            display: none; 
+            z-index: 1000; 
+
+            /* Estado inicial: oculto con opacidad 0 */
+            visibility: hidden; 
             opacity: 0;
-            transition: opacity 1s ease;
+            /* Transición suave de 1.5 segundos para la opacidad y visibilidad */
+            transition: opacity 1.5s ease, visibility 1.5s ease;
         }
 
+        /* Clase que activa el JavaScript para mostrarlo con opacidad */
         .show-btn {
-            display: block !important;
+            visibility: visible !important;
             opacity: 1 !important;
         }
 
@@ -66,7 +68,7 @@
        id="whatsappBtn" 
        class="btn-whatsapp" 
        target="_blank">
-        Hacé tu pedido! 📱
+        Hacé tu pedido!
     </a>
 
     <script>
@@ -76,8 +78,8 @@
             // Espera 3 segundos y muestra el botón automáticamente
             setTimeout(() => {
                 btn.classList.add('show-btn');
-                console.log("Botón mostrado"); // Esto es para probar si funciona
-            }, 3000);
+                console.log("Botón mostrado con opacidad"); // Esto es para probar si funciona
+            }, 3000); // 3000 milisegundos = 3 segundos
         };
     </script>
 
