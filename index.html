@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giulio - Fatto in casa</title>
+    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23737511%22 /></svg>">
+
+    <meta property="og:title" content="Giulio - Fatto in casa">
+    <meta property="og:description" content="Pastas artesanales hechas a mano. Mirá nuestro menú aquí.">
+    <meta property="og:image" content="menu.png">
 
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: #000000; 
+            background-color: #000000; /* Fondo negro solicitado */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -28,29 +33,30 @@
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background-color: #737511; 
-            color: #f9dbaa; 
+            background-color: #737511; /* Verde Oliva solicitado */
+            color: #f9dbaa; /* Color crema solicitado */
             padding: 15px 25px;
             border-radius: 50px;
             text-decoration: none;
-            font-family: "Futura Medium", "Futura", sans-serif;
+            font-family: "Futura Medium", "Futura", "Trebuchet MS", Arial, sans-serif;
             font-size: 18px;
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(0,0,0,0.6);
             z-index: 100;
             
-            /* Estado inicial: oculto */
+            /* Estado inicial del botón (oculto) */
             display: none; 
             opacity: 0;
-            transition: opacity 0.8s ease;
+            transition: opacity 0.8s ease, transform 0.2s ease;
         }
 
-        /* Clase que activa la visibilidad */
+        /* Clase que activa el JavaScript para mostrarlo */
         .show-btn {
             display: block;
             opacity: 1;
         }
 
+        /* Efecto al presionar con el dedo */
         .btn-whatsapp:active {
             transform: scale(0.95);
         }
@@ -61,9 +67,3 @@
     <div class="menu-container">
         <img src="menu.png" alt="Menú Pastas Giulio">
     </div>
-
-    <a href="https://wa.me/5491134240420?text=Hola%20Giulio!%20Vi%20el%20menú%20y%20quiero%20hacer%20un%20pedido" 
-       id="whatsappBtn" 
-       class="btn-whatsapp" 
-       target="_blank">
-        Hacé tu pedido
